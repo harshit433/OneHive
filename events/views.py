@@ -55,7 +55,6 @@ def home(request):
     return render(request,'events.html',context)
 
 def hackathons(request):
-    
     context['all_hacks'] = list(allevents.objects.filter( event_type = 'hackathon' ).values())
     return render(request,'hackathons.html',context)
 
