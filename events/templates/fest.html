@@ -1,0 +1,71 @@
+{% extends 'events_base.html' %}
+
+{% block content %}
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">FESTS</h1>
+                    <h1 data-aos="fade-up">Fests are meant to easy study pressure from students</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">
+                        Fests are a great way to meet new people, learn new things, and have fun. They are a great way
+                        to
+                        meet new people, learn new things, and have fun.
+                    </h2>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{static}}img/events_list/hackathons.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- ======= End Hero ====== -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Fests</h2>
+                <p>Check out the latest fests</p>
+            </header>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-cultural">Cultural</li>
+                        <li data-filter=".filter-technical">Technical</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                
+                {% for i in all_fests %}
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-{{i.category}}">
+                    <div class="portfolio-wrap">
+                        <img src= "{{ images }}{{i.banner_image}}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div class="portfolio-links">
+                                <a href="/events/fests/{{i.id}}" title="More Details"><i class="bi bi-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section><!-- End Portfolio Section -->
+{%endblock%}

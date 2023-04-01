@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Favicons -->
+    <link href="static/img/favicon.png" rel="icon">
+    <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="static/vendor/aos/aos.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="static/css/events/organize-form.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="/home" class="logo d-flex align-items-center">
+                <!-- <img src="static/img/logo.png" alt="LOGO"> -->
+                <span>LOGO</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="/home">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/discussion_forum">Discussions Forum</a></li>
+                    <li><a class="nav-link scrollto active" href="/events">Events</a></li>
+                    <li><a class="nav-link scrollto" href="/communication">Communication</a></li>
+                    <li><a class="nav-link scrollto" href="/projects">Projects</a></li>
+                    <li><a class="nav-link scrollto" href="/resources">Resources</a></li>
+                    <li><a class="getstarted scrollto" href="/login">Login</a></li>
+                    <li><a class="organize scrollto" href="/organize">Organize</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header>
+    <!-- ======= End Header ======= -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+
+        <div class="container" data-aos="fade-down">
+
+            <header class="section-header">
+                <p>Organize An Event</p>
+            </header>
+
+            <div class="reg-form">
+                <form method='post' action="/events/" enctype = "multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="eventtype">Event type</label>
+                        <div class="d-flex">
+                            <div class="form-check mr-4">
+                                <input class="form-check-input" type="radio" name="eventtype" id="hackathon" value="hackathon">
+                                <label class="form-check-label" for="hackathon">Hackathon</label>
+                            </div>
+                            <div class="form-check mr-4">
+                                <input class="form-check-input" type="radio" name="eventtype" id="fest" value="fest">
+                                <label class="form-check-label" for="fest">Fest</label>
+                            </div>
+                            <div class="form-check mr-4">
+                                <input class="form-check-input" type="radio" name="eventtype" id="seminar" value="seminar">
+                                <label class="form-check-label" for="seminar">Seminar</label>
+                            </div>
+                            <div class="form-check mr-4">
+                                <input class="form-check-input" type="radio" name="eventtype" id="webinar" value="webinar">
+                                <label class="form-check-label" for="webinar">Webinar</label>
+                            </div>
+                            <div class="form-check mr-4">
+                                <input class="form-check-input" type="radio" name="eventtype" id="case_study" value="case_study">
+                                <label class="form-check-label" for="case_study">Case Study</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="eventtype" id="debate" value="debate">
+                                <label class="form-check-label" for="debate">Debate</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventName">Event Name</label>
+                        <input type="text" class="form-control" id="eventName" name="eventName">
+                    </div>
+                    <div class="form-group">
+                        <label for="eventVenue">Event Venue</label>
+                        <input type="text" class="form-control" id="eventVenue" name="eventVenue">
+                    </div>
+                    <div class="form-group">
+                        <label for="eventInfo">Event Info</label>
+                        <textarea class="form-control" id="eventInfo" name="eventInfo" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="bannerImage">Banner Image</label>
+                        <input type="file" class="form-control-file" id="bannerImage" name="bannerImage">
+                    </div>
+                    <div class="form-group">
+                        <label for="teamSize">Team Size</label>
+                        <div class="d-flex">
+                            <div class="form-check mr-4">
+                                <input class="form-check-input" type="radio" name="teamSize" id="teamSize1" value="1">
+                                <label class="form-check-label" for="teamSize1">1</label>
+                            </div>
+                            <div class="form-check mr-4">
+                                <input class="form-check-input" type="radio" name="teamSize" id="teamSize2" value="2">
+                                <label class="form-check-label" for="teamSize2">2</label>
+                            </div>
+                            <div class="form-check mr-4">
+                                <input class="form-check-input" type="radio" name="teamSize" id="teamSize3" value="3">
+                                <label class="form-check-label" for="teamSize3">3</label>
+                            </div>
+                            <div class="form-check mr-4">
+                                <input class="form-check-input" type="radio" name="teamSize" id="teamSize4" value="4">
+                                <label class="form-check-label" for="teamSize4">4</label>
+                            </div>
+                            <div class="form-check mr-4">
+                                <input class="form-check-input" type="radio" name="teamSize" id="teamSize5" value="5">
+                                <label class="form-check-label" for="teamSize5">5</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="teamSize" id="teamSize6" value="6">
+                                <label class="form-check-label" for="teamSize6">6</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Deadline</label>
+                        <input type="date" class="form-control" id="deadline" name="deadline">
+                    </div>
+                    <div class="form-group">
+                        <label for="eligibility">Eligibility</label>
+                        <input type="text" class="form-control" id="eligibility" name="eligibility">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select class="form-control" id="category" name="category">
+                            <option value="">Select Category</option>
+                            <option value="engineering">Engineering</option>
+                            <option value="ds">Data Science</option>
+                            <option value="mba">MBA</option>
+                            <option value="technology">Technology debate</option>
+                            <option value="political">Political debate</option>
+                            <option value="educational">Educational debate</option>
+                            <option value="cultural">Cultural fest</option>
+                            <option value="technical">Technical fest</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDate">Event Date</label>
+                        <input type="date" class="form-control" id="eventDate" name="eventDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="eventInfo2">Info about Event</label>
+                        <textarea class="form-control" id="eventInfo2" name="eventInfo2" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="guidelines">Guidelines of Event</label>
+                        <textarea class="form-control" id="guidelines" name="guidelines" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="rules">Rules of Event</label>
+                        <textarea class="form-control" id="rules" name="rules" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventImage">Event Image</label>
+                        <input type="file" class="form-control-file" id="eventImage" name="eventImage">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstPrize">1st Prize</label>
+                        <input type="text" class="form-control" id="firstPrize" name="firstPrize">
+                    </div>
+                    <div class="form-group">
+                        <label for="secondPrize">2nd Prize</label>
+                        <input type="text" class="form-control" id="secondPrize" name="secondPrize">
+                    </div>
+                    <div class="form-group">
+                        <label for="thirdPrize">3rd Prize</label>
+                        <input type="text" class="form-control" id="thirdPrize" name="thirdPrize">
+                    </div>
+                    <div class="form-group">
+                        <label for="participationPrize">Participation Prize</label>
+                        <input type="text" class="form-control" id="participationPrize" name="participationPrize">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" class="form-control" id="contactName" name="contactName">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number</label>
+                        <input type="tel" class="form-control" id="contactNumber" name="contactNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="referenceWebsite">Reference Website URL</label>
+                        <input type="url" class="form-control" id="referenceWebsite" name="referenceWebsite">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-info">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <!-- <img src="static/img/logo.png" alt=""> -->
+                            <span>LOGO</span>
+                        </a>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
+                            valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Discussion Forum</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Events</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Communication</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Projects</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Resources</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </footer><!-- End Footer -->
+
+    <!-- Vendor JS Files -->
+    <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="static/vendor/aos/aos.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="static/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="static/js/index/index.js"></script>
+
+</body>
+
+</html>

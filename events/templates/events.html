@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Favicons -->
+    <link href="{{ static }}img/favicon.png" rel="icon">
+    <link href="{{ static }}img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ static }}vendor/aos/aos.css" rel="stylesheet">
+    <link href="{{ static }}vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ static }}vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ static }}vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="{{ static }}vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="{{ static }}vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{ static }}css/events/events.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="/home" class="logo d-flex align-items-center">
+                <!-- <img src="{{ static }}img/logo.png" alt="LOGO"> -->
+                <span>LOGO</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="/home">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/discussion_forum">Discussions Forum</a></li>
+                    <li><a class="nav-link scrollto active" href="/events">Events</a></li>
+                    <li><a class="nav-link scrollto" href="/communication">Communication</a></li>
+                    <li><a class="nav-link scrollto" href="/projects">Projects</a></li>
+                    <li><a class="nav-link scrollto" href="/resources">Resources</a></li>
+                    <li><a class="getstarted scrollto" href="/login">Login</a></li>
+                    <li><a class="organize scrollto" href="/organize">Organize</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header>
+    <!-- ======= End Header ======= -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+
+        <div class="container" data-aos="fade-up">
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+
+                    {% for i in all_events%}
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="profile mt-auto">
+                                <img src={{ images }}{{i.banner_image}} class="testimonial-img" alt="">
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Events</h2>
+                <p>List of events you can attend</p>
+            </header>
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-box blue">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Hackathons</h3>
+                        <a href="hackathons" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-box orange">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Fests</h3>
+                        <a href="fests" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-box green">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Seminars</h3>
+                        <a href="seminars" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-box red">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Webinars</h3>
+                        <a href="webinars" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-box purple">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Case Studies</h3>
+                        <a href="case_studies" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+                    <div class="service-box pink">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Debates</h3>
+                        <a href="debates" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- End Services Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Portfolio</h2>
+                <p>Check our latest work</p>
+            </header>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-live">Live</li>
+                        <li data-filter=".filter-upcoming">Upcoming</li>
+                        <li data-filter=".filter-completed">Completed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                {% for i in upcoming_events%}
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-upcoming">
+                    <div class="portfolio-wrap">
+                        <img src={{ images }}{{i.banner_image}} class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div class="portfolio-links">
+                                <a href="/events/{{i.event_type}}s/{{i.id}}" title="More Details"><i class="bi bi-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {%endfor%}
+
+                {% for i in live_events%}
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-live">
+                    <div class="portfolio-wrap">
+                        <img src={{ images }}{{i.banner_image}} class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div class="portfolio-links">
+                                <a href="/events/{{i.event_type}}s/{{i.id}}" title="More Details"><i class="bi bi-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {%endfor%}
+
+                {% for i in completed_events%}
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-completed">
+                    <div class="portfolio-wrap">
+                        <img src={{ images }}{{i.banner_image}} class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div class="portfolio-links">
+                                <a href="/events/{{i.event_type}}s/{{i.id}}" title="More Details"><i class="bi bi-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {%endfor%}
+
+            </div>
+
+        </div>
+
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="bi bi-emoji-smile"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="{{all_events.count}}" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>All Events</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="{{live_events.count}}" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Live Events</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="bi bi-headset" style="color: #15be56;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="{{upcoming_events.count}}" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Upcoming Events</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="bi bi-people" style="color: #bb0852;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="{{completed_events.count}}" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Completed Events</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-info">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <!-- <img src="{{ static }}img/logo.png" alt=""> -->
+                            <span>LOGO</span>
+                        </a>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
+                            valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Discussion Forum</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Events</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Communication</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Projects</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Resources</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </footer><!-- End Footer -->
+
+    <!-- Vendor JS Files -->
+    <script src="{{ static }}vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="{{ static }}vendor/aos/aos.js"></script>
+    <script src="{{ static }}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ static }}vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="{{ static }}vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="{{ static }}vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ static }}vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ static }}js/index/index.js"></script>
+
+</body>
+
+</html>

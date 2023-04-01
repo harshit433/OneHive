@@ -1,0 +1,70 @@
+{% extends 'events_base.html' %}
+
+{% block content%}
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">SEMINARS</h1>
+                    <h1 data-aos="fade-up">The key to success is to gain knowledge</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">
+                        We provide you with the best seminars to help you gain knowledge and excel in your field.
+                    </h2>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{static}}img/events_list/hackathons.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- ======= End Hero ====== -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Seminars</h2>
+                <p>Check out the latest Seminars</p>
+            </header>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-engineering">Engineering</li>
+                        <li data-filter=".filter-mba">MBA</li>
+                        <li data-filter=".filter-ds">Data Science</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                {% for i in all_sems %}
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-{{i.category}}">
+                    <div class="portfolio-wrap">
+                        <img src= "{{ images }}{{i.banner_image}}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div class="portfolio-links">
+                                <a href="/events/seminars/{{i.id}}" title="More Details"><i class="bi bi-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section><!-- End Portfolio Section -->
+
+    {%endblock%}
