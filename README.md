@@ -1,6 +1,6 @@
 # OneHive
 
-**OneHive** is a web application developed with Flask, designed to connect college students from different institutions. The platform offers various features to enhance student interaction, collaboration, and resource sharing.
+**OneHive** is a web application developed with Django, designed to connect college students from different institutions. The platform offers various features to enhance student interaction, collaboration, and resource sharing.
 
 ## Overview
 
@@ -35,7 +35,7 @@ The platform is organized into several modules:
 
 ## Technologies Used
 
-- **Framework**: Flask
+- **Framework**: Django
 - **Database**: SQLite
 - **Frontend**: HTML, CSS, JavaScript
 - **Others**: Python
@@ -61,7 +61,8 @@ The platform is organized into several modules:
 
 4. **Run the application:**
    ```bash
-   flask run
+   python manage.py migrate
+   python manage.py runserver
    ```
 
 ## Usage
