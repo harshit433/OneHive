@@ -73,11 +73,3 @@ The platform is organized into several modules:
 ## Contributing
 
 Contributions are welcome! If you have suggestions or improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE), allowing for flexibility in usage, modification, and distribution.
-
----
-
-Feel free to modify the details according to your project's specifics and personal preferences!
